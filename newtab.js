@@ -3,7 +3,25 @@ const SAFE_MARGIN = 40;
 const FOOTER_OFFSET = 80; // Brave bottom bar
 const TRIGGER_DISTANCE = 140;
 
+let lastMove = 0;
+const COOLDOWN = 200; // ms
+
 function moveRandomly() {
+  // const r = el.getBoundingClientRect();
+
+  // const maxX = window.innerWidth - r.width - SAFE_MARGIN;
+  // const maxY = window.innerHeight - r.height - SAFE_MARGIN - FOOTER_OFFSET;
+
+  // const x = Math.random() * maxX + SAFE_MARGIN;
+  // const y = Math.random() * maxY + SAFE_MARGIN;
+
+  // el.style.left = `${x}px`;
+  // el.style.top = `${y}px`;
+  // el.style.transform = "none";
+  const now = Date.now();
+  if (now - lastMove < COOLDOWN) return;
+  lastMove = now;
+
   const r = el.getBoundingClientRect();
 
   const maxX = window.innerWidth - r.width - SAFE_MARGIN;

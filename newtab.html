@@ -22,8 +22,12 @@
                 top: 50%;
                 transform: translate(-50%, -50%);
                 transition:
-                    left 0.15s ease,
-                    top 0.15s ease;
+                    left 0.15s ease-out,
+                    top 0.15s ease-out;
+            }
+
+            #search:hover {
+                transition-duration: 0.15s;
             }
 
             input {
