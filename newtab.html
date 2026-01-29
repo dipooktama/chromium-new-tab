@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>New Tab</title>
+        <style>
+            html,
+            body {
+                margin: 0;
+                width: 100%;
+                height: 100%;
+                overflow: hidden;
+            }
+
+            body {
+                background: url("./image.jpg") center / cover no-repeat;
+            }
+
+            #search {
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%, -50%);
+                transition:
+                    left 0.15s ease,
+                    top 0.15s ease;
+            }
+
+            input {
+                width: 360px;
+                padding: 14px 18px;
+                border-radius: 999px;
+                border: none;
+                font-size: 16px;
+            }
+        </style>
+    </head>
+    <body>
+        <form id="search" action="https://search.brave.com/search" method="GET">
+            <input
+                type="text"
+                name="q"
+                placeholder="Search"
+                autocomplete="off"
+            />
+        </form>
+
+        <script src="newtab.js"></script>
+    </body>
+</html>
